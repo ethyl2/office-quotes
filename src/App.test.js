@@ -1,5 +1,5 @@
 import React from 'react';
-//import { render } from '@testing-library/react';
+import { render, fireEvent } from '@testing-library/react';
 import renderer from 'react-test-renderer';
 import App from './App';
 import Header from './components/Header';
@@ -32,4 +32,8 @@ test('<App /> matches snapshot', () => {
   expect(tree).toMatchSnapshot();
 });
 
+it('renders success text', () => {
+  const { getByText, findByText } = render(<App />);
+  findByText('/successi/i');
+});
 

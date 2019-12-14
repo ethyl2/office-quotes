@@ -27,6 +27,16 @@ exports[`<App /> matches snapshot 1`] = `
       Learn React
     </a>
   </header>
+  <div>
+    <span>
+      
+    </span>
+    <button
+      onClick={[Function]}
+    >
+      Get Message!
+    </button>
+  </div>
 </div>
 `;
 
