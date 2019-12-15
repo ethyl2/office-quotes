@@ -1,7 +1,9 @@
 import React, { useState, useEffect, createContext } from 'react';
 import axios from 'axios';
+
 import Header from './components/Header';
 import Quotes from './components/Quotes';
+import Footer from './components/Footer';
 
 import './App.css';
 import bestboss from './bestboss.jpg';
@@ -17,7 +19,7 @@ function App() {
   const [seasonInput, setSeasonInput] = useState(1);
 
   useEffect(() => {
-    axios.get(`https://the-office-api.herokuapp.com/season/${season}/format/quotes`)
+    axios.get(`https://cors-anywhere.herokuapp.com/https://the-office-api.herokuapp.com/season/${season}/format/quotes`)
     .then(res => {console.log(res);
       setQuotes(res.data.data); 
       })
@@ -26,8 +28,7 @@ function App() {
 
   
   const fakeApiCall = () => {
-    const quickQuote = quickQuotes[Math.floor(Math.random() * quickQuotes.length)];
-    return Promise.resolve(quickQuote);
+    return Promise.resolve(quickQuotes[Math.floor(Math.random() * quickQuotes.length)]);
   }
 
   const onClickHandler = () => {
@@ -71,6 +72,7 @@ function App() {
       <QuotesContext.Provider value={[season, quotes]}>
         <Quotes />
       </QuotesContext.Provider>
+      <Footer />
     </div>
   );
 }

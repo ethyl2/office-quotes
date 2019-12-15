@@ -47,6 +47,17 @@ p {
   }
 }
 
+a {
+  text-decoration: none;
+  border-bottom: 1px solid #18BAEC;
+  color: black;
+  margin: 0.5rem;
+}
+
+a:hover {
+  font-style: italic;
+}
+
 button {
   padding: 1rem;
   margin: 1rem 5rem;
@@ -93,6 +104,16 @@ input, label {
 }
 
 label {
-  
   padding: 0.25rem;
+}
+
+footer {
+  border-top: 4px dotted black;
+  margin-top: 2rem;
+  padding-top: 2rem;
+}
+
+footer p {
+  border: none;
+  margin: 1rem;
 }
