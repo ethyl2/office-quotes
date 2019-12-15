@@ -34,6 +34,7 @@ test('<App /> matches snapshot', () => {
 
 it('renders success text', () => {
   const { getByText, findByText } = render(<App />);
-  findByText('/successi/i');
+  const successEl = findByText('/successi/i');
+  console.log(successEl);
 });
 
