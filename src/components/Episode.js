@@ -9,7 +9,16 @@ const Episode = ({ item }) => {
     return (
         <div key={item.episode}>
             <button onClick={handleClick}>Episode #{item.episode}: {item.name}</button>
-            {visible && item.quotes.map((quote, index) => <p key={index}>{quote}</p>)}
+            {visible && <div>{item.quotes.map(quote => { 
+                return (
+                    <div className='itemBox'>{quote.map((line, index) => {
+                    return (
+                        <p key={index}>{line}</p> 
+                    )
+                })}</div>)
+            })
+            }
+            </div>}
         </div>)
 }
 
