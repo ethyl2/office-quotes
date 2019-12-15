@@ -13,17 +13,23 @@ import { quickQuotes } from './quickQuotes';
 export const QuotesContext = createContext();
 
 function App() {
-  const [message, setMessage] = useState('');
   const [quotes, setQuotes] = useState([]);
   const [season, setSeason] = useState(1);
+  const [isLoading, setIsLoading] = useState(false);
+
+  const [message, setMessage] = useState('');
   const [seasonInput, setSeasonInput] = useState(1);
 
   useEffect(() => {
+    setIsLoading(true);
     axios.get(`https://cors-anywhere.herokuapp.com/https://the-office-api.herokuapp.com/season/${season}/format/quotes`)
     .then(res => {console.log(res);
-      setQuotes(res.data.data); 
+      setQuotes(res.data.data);
+      setIsLoading(false); 
       })
-    .catch(err => console.log(err));
+    .catch(err => {
+      console.log(err);
+      setIsLoading(false)});
   }, [season]);
 
   
@@ -69,7 +75,7 @@ function App() {
         <button type='submit'>Submit</button>
       </form>
 
-      <QuotesContext.Provider value={[season, quotes]}>
+      <QuotesContext.Provider value={[season, quotes, isLoading]}>
         <Quotes />
       </QuotesContext.Provider>
       <Footer />
