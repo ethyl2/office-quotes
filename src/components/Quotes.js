@@ -3,10 +3,10 @@ import { QuotesContext } from '../App';
 import Episode from './Episode';
 
 const Quotes = () => {
-    const quotes = useContext(QuotesContext);
+    const [season, quotes] = useContext(QuotesContext);
     return (
         <div>
-            <h1>Quotes from The Office</h1>
+           <h3>Season {season}</h3>
             {quotes.map(item => <Episode item={item} key={item.episode} />)}
         </div>    
     )

@@ -5,6 +5,7 @@ import Quotes from './components/Quotes';
 
 import './App.css';
 import bestboss from './bestboss.jpg';
+import { quickQuotes } from './quickQuotes';
 
 
 export const QuotesContext = createContext();
@@ -24,7 +25,10 @@ function App() {
   }, [season]);
 
   
-  const fakeApiCall = () => Promise.resolve('Success!');
+  const fakeApiCall = () => {
+    const quickQuote = quickQuotes[Math.floor(Math.random() * quickQuotes.length)];
+    return Promise.resolve(quickQuote);
+  }
 
   const onClickHandler = () => {
     fakeApiCall().then(res => setMessage(res));
@@ -45,7 +49,7 @@ function App() {
       <div className='hero'>
         <div className='imgContainer'>
           <span>{message}</span>
-          <button onClick={onClickHandler}>Get Message!</button>
+          <button onClick={onClickHandler}>Quick Quote!</button>
         </div>
         <div className='imgContainer'>
           <img src={bestboss} alt='best boss mug' />
@@ -64,7 +68,7 @@ function App() {
         <button type='submit'>Submit</button>
       </form>
 
-      <QuotesContext.Provider value={quotes}>
+      <QuotesContext.Provider value={[season, quotes]}>
         <Quotes />
       </QuotesContext.Provider>
     </div>

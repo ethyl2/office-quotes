@@ -13,19 +13,8 @@ exports[`<App /> matches snapshot 1`] = `
       src="logo.svg"
     />
     <h1>
-      Experimenting with tests.
+      Quotes from The Office
     </h1>
-    <h2>
-      Including snapshot testing, using react-test-renderer
-    </h2>
-    <a
-      className="App-link"
-      href="https://reactjs.org"
-      rel="noopener noreferrer"
-      target="_blank"
-    >
-      Learn React
-    </a>
   </header>
   <div
     className="hero"
@@ -39,7 +28,7 @@ exports[`<App /> matches snapshot 1`] = `
       <button
         onClick={[Function]}
       >
-        Get Message!
+        Quick Quote!
       </button>
     </div>
     <div
@@ -75,9 +64,10 @@ exports[`<App /> matches snapshot 1`] = `
     </button>
   </form>
   <div>
-    <h1>
-      Quotes from The Office
-    </h1>
+    <h3>
+      Season 
+      1
+    </h3>
   </div>
 </div>
 `;
@@ -92,18 +82,7 @@ exports[`<Header /> should match snapshot 1`] = `
     src="logo.svg"
   />
   <h1>
-    Experimenting with tests.
+    Quotes from The Office
   </h1>
-  <h2>
-    Including snapshot testing, using react-test-renderer
-  </h2>
-  <a
-    className="App-link"
-    href="https://reactjs.org"
-    rel="noopener noreferrer"
-    target="_blank"
-  >
-    Learn React
-  </a>
 </header>
 `;

@@ -36,7 +36,7 @@ test('<App /> matches snapshot', () => {
 it('renders success text', () => {
   const { getByText, findByText } = render(<App />);
   act(() => {
-    fireEvent.click(getByText('Get Message!')); 
+    fireEvent.click(getByText('Quick Quote!')); 
   });
   findByText(/success/i);
   //const tester = getByText(/success/i);

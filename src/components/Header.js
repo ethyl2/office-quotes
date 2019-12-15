@@ -6,18 +6,7 @@ class Header extends React.Component {
         return (
             <header className="App-header">
                 <img src={logo} className="App-logo" alt="logo" />
-                <h1>
-                Experimenting with tests.
-                </h1>
-                <h2>Including snapshot testing, using react-test-renderer</h2>
-                <a
-                className="App-link"
-                href="https://reactjs.org"
-                target="_blank"
-                rel="noopener noreferrer"
-                >
-                Learn React
-                </a>
+                <h1>Quotes from The Office</h1>  
             </header>
         )
     }
