@@ -27,15 +27,57 @@ exports[`<App /> matches snapshot 1`] = `
       Learn React
     </a>
   </header>
-  <div>
-    <span>
-      
-    </span>
-    <button
-      onClick={[Function]}
+  <div
+    className="hero"
+  >
+    <div
+      className="imgContainer"
     >
-      Get Message!
+      <span>
+        
+      </span>
+      <button
+        onClick={[Function]}
+      >
+        Get Message!
+      </button>
+    </div>
+    <div
+      className="imgContainer"
+    >
+      <img
+        alt="best boss mug"
+        src="bestboss.jpg"
+      />
+    </div>
+  </div>
+  <form
+    onSubmit={[Function]}
+  >
+    <label
+      htmlFor="season-input"
+    >
+      Choose a Season: 
+    </label>
+    <input
+      id="season-input"
+      max="9"
+      min="1"
+      name="season-input"
+      onChange={[Function]}
+      type="number"
+      value={1}
+    />
+    <button
+      type="submit"
+    >
+      Submit
     </button>
+  </form>
+  <div>
+    <h1>
+      Quotes from The Office
+    </h1>
   </div>
 </div>
 `;

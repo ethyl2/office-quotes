@@ -3,6 +3,7 @@ import { render, fireEvent } from '@testing-library/react';
 import renderer from 'react-test-renderer';
 import App from './App';
 import Header from './components/Header';
+import { act } from 'react-dom/test-utils';
 
 /*
 test('renders learn react link', () => {
@@ -34,7 +35,12 @@ test('<App /> matches snapshot', () => {
 
 it('renders success text', () => {
   const { getByText, findByText } = render(<App />);
-  const successEl = findByText('/successi/i');
-  console.log(successEl);
+  act(() => {
+    fireEvent.click(getByText('Get Message!')); 
+  });
+  findByText(/success/i);
+  //const tester = getByText(/success/i);
+  //expect(tester).toBeInTheDocument();
+  //console.log(successEl);
 });
 
