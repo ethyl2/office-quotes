@@ -6,7 +6,7 @@ import Quotes from './components/Quotes';
 import Footer from './components/Footer';
 
 import './App.css';
-import bestboss from './bestboss.jpg';
+import bestboss from './images/bestboss.jpg';
 import { quickQuotes } from './quickQuotes';
 
 
